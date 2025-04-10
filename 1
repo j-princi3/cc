@@ -1,0 +1,28 @@
+Below is a comprehensive, step‐by‐step guide for setting up and executing your experiments in AWS. Each experiment is broken down into its tasks with clear instructions, AWS console actions, and command‐line examples where applicable. Be sure you have the necessary permissions (and key pairs created) in your AWS account before proceeding.
+
+---
+
+## Experiment 1: Working with EC2 Instances
+
+### Task 1: Launch an EC2 Instance Using Ubuntu OS, Connect via SSH, and Use Direct Connect
+
+1. **Launch the Instance:**
+   - Log in to the AWS Management Console and navigate to **EC2**.
+   - Click **Launch Instance**.
+   - **Choose an AMI:** Select an official Ubuntu Server (e.g., *Ubuntu Server 20.04 LTS*).
+   - **Instance Type:** Choose an instance type (e.g., t2.micro).
+   - **Configure Instance Details:** Adjust settings if needed (leave the defaults for a basic experiment).  
+   - **Add Storage:** Accept default volume size or increase as needed.
+   - **Add Tags:** Optionally add a tag (e.g., Key: `Name`, Value: `Ubuntu-SSH`).
+   - **Configure Security Group:**  
+     - Create or select a security group that allows inbound SSH (port 22) from your IP.
+   - **Key Pair:** Create a new key pair or choose an existing one, download the PEM file, and secure it (set permissions with `chmod 400 your-key.pem`).
+
+2. **Connect to the Instance via SSH:**
+   - In the EC2 console, select your instance and click **Connect**.
+   - Follow the instructions or use your terminal:
+     ```bash
+     ssh -i "your-key.pem" ubuntu@<Public-IP-of-Instance>
+     ```
+   - **Note on Direct Connect:** If you refer to using [AWS Direct Connect](https://aws.amazon.com/directconnect/), ensure that your on-premises connectivity is established as per AWS guidelines. Otherwise, “direct connect” might simply indicate connecting directly via SSH.
+
