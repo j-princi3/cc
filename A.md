@@ -13,3 +13,4 @@
 | **11**     | IAM Policies & Roles           | **✅Personal**     | IAM **role testing with EC2** may be blocked in Academy                |
 | **12a**    | SNS + SQS Order Processing     | **Academy**       | Fully supported, no billing risk                                       |
 | **12b**    | CloudFront CDN Setup           | **✅Personal**     | ❗CloudFront may incur costs and is **blocked in some Academy regions** |
+princi
